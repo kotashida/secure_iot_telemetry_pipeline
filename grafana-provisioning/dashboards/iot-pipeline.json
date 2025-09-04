@@ -1,0 +1,44 @@
+{
+  "uid": "iot-pipeline",
+  "title": "IoT Telemetry Pipeline",
+  "timezone": "browser",
+  "schemaVersion": 36,
+  "version": 1,
+  "refresh": "10s",
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Gateway Throughput",
+      "gridPos": {"x": 0, "y": 0, "w": 12, "h": 8},
+      "targets": [
+        {"expr": "sum(rate(gateway_mqtt_messages_received_total[1m]))", "legendFormat": "received"},
+        {"expr": "sum(rate(gateway_kafka_messages_produced_total[1m]))", "legendFormat": "produced"}
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Validation Errors",
+      "gridPos": {"x": 12, "y": 0, "w": 12, "h": 8},
+      "targets": [
+        {"expr": "sum(rate(gateway_validation_errors_total[1m]))", "legendFormat": "errors"}
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Anomalies Detected (rate)",
+      "gridPos": {"x": 0, "y": 8, "w": 12, "h": 8},
+      "targets": [
+        {"expr": "sum(rate(anomaly_detector_anomalies_detected_total[1m]))", "legendFormat": "anomalies"}
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "End-to-End Latency P95 (s)",
+      "gridPos": {"x": 12, "y": 8, "w": 12, "h": 8},
+      "targets": [
+        {"expr": "histogram_quantile(0.95, sum(rate(pipeline_end_to_end_latency_seconds_bucket[5m])) by (le))", "legendFormat": "p95"}
+      ]
+    }
+  ]
+}
+

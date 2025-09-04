@@ -1,0 +1,19 @@
+
+{
+  "type": "record",
+  "name": "DroneTelemetry",
+  "namespace": "com.secure_iot_telemetry",
+  "fields": [
+    {"name": "timestamp", "type": "long", "logicalType": "timestamp-millis"},
+    {"name": "drone_id", "type": "string"},
+    {"name": "latitude", "type": "double"},
+    {"name": "longitude", "type": "double"},
+    {"name": "altitude", "type": "float"},
+    {"name": "velocity", "type": "float"},
+    {"name": "acceleration_x", "type": "float"},
+    {"name": "acceleration_y", "type": "float"},
+    {"name": "acceleration_z", "type": "float"},
+    {"name": "battery_level", "type": "float"},
+    {"name": "signal_strength", "type": "float"}
+  ]
+}

@@ -1,0 +1,5 @@
+kafka-python
+pyod
+pandas
+scikit-learn
+prometheus-client

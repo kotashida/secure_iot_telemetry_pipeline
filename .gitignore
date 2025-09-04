@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Virtual envs
+.venv/
+venv/
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Env files
+.env
+
+# Docker/Compose artifacts
+*.log
+
+# Certificates and CSRs (keep only required dev certs tracked explicitly)
+*.key
+*.csr
+*.srl
+
+# Mosquitto runtime state (kept outside of VCS)
+mosquitto/data/
+mosquitto/log/
+
+# Node/npm leftovers (if any future UI gets added)
+node_modules/
+

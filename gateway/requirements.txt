@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+paho-mqtt
+kafka-python
+fastavro
+prometheus-client
